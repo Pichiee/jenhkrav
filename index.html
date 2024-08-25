@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* Ensures the entire content is centered both vertically and horizontally */
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0; /* Light background color */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Styles the container */
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styles the header text */
+        .header_text {
+            margin-bottom: 20px;
+            color: #333333;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Styles the gif container */
+        .gif_container img {
+            width: 100%;
+            max-width: 250px;
+            border-radius: 10px;
+        }
+
+        /* Styles the button container */
+        .button_container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Adds space between the buttons */
+        }
+
+        .btn {
+            padding: 12px 25px;
+            font-size: 18px;
+            color: #ffffff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1 class="header_text">Do you wanna go out with me?</h1>
+        </div>
+        <div class="gif_container">
+            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDdtZ2JiZDR0a3lvMWF4OG8yc3p6Ymdvd3g2d245amdveDhyYmx6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cute animated illustration">
+        </div>
+        <div class="button_container">
+            <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+            <button class="btn" id="noButton" onmouseover="moveButton()">No</button>
+        </div>
+    </div>
+
+    <script>
+        function nextPage() {
+            window.location.href = "yes.html";
+        }
+        
+        function moveButton() {
+            var button = document.getElementById('noButton');
+            var x = Math.random() * (window.innerWidth - button.offsetWidth);
+            var y = Math.random() * (window.innerHeight - button.offsetHeight);
+
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
